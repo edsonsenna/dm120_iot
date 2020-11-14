@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Smart Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p style="text-align: center;">Monitoramento de Parâmetros</p>
+
+  <p style="text-align: center;">
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 2rem;" (click)="goToPage('temperature')">
+        <ion-icon name="thermometer" color="blue"></ion-icon>
+        Temperatura
+      </ion-card-content>
+    </ion-card>
+  </p>
+
+  <p style="text-align: center;">
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 2rem;" (click)="goToPage('luminosity')">
+        <ion-icon name="bulb" color="blue"></ion-icon>
+        Luminosidade
+      </ion-card-content>
+    </ion-card>
+  </p>
+
+  <p style="text-align: center;">
+    <ion-card>
+      <ion-card-content style="text-align: center; font-size: 2rem;" (click)="goToPage('humidity')">
+        <ion-icon name="water" color="blue"></ion-icon>
+        Umidade
+      </ion-card-content>
+    </ion-card>
+  </p>
+
+</ion-content>
