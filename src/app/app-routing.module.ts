@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'humidity',
     loadChildren: () => import('./pages/humidity/humidity.module').then( m => m.HumidityPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule)
   }
 ];
 

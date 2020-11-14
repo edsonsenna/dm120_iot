@@ -1,0 +1,35 @@
+ion-card {
+    padding: 5px;
+}
+
+ion-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-row {
+    width: 100%;
+}
+
+.min-max-row {
+    font-size: 1rem;
+}
+
+.min-max-row,
+.hour-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.hour-wrapper {
+    margin: 5px;
+}
+
+.min-icon {
+    color: blue;
+}
+
+.max-icon {
+    color: red;
+}

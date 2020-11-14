@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-icon
+        name="arrow-back"
+        style="font-size: 2rem"
+        (click)="goBack()"
+      ></ion-icon>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="isLoading" style="text-align: center; margin-top: 50%">
+    <ion-spinner style="width: 80px; height: 80px"></ion-spinner>
+    <p>Carregando</p>
+  </div>
+  <div *ngIf="!isLoading">
+    <p style="text-align: center;">
+      <ion-card>
+        <ion-card-title align="center">Cor do Led</ion-card-title>
+        <ion-card-content>
+          <div style="height: 30px; width: 100%;" [style.background]="dweet?.with[0].content.$currentColor"></div>
+        </ion-card-content>
+      </ion-card>
+    </p>
+    <p style="text-align: center;">
+      <ion-card>
+        <ion-card-title align="center">Estado do Sinal Sonoro</ion-card-title>
+        <ion-card-content>
+          <div style="height: 30px; width: 100%;">
+            <ion-toggle color="primary" disabled [checked]="!!dweet?.with[0].content.$statusBuzzer"></ion-toggle></div>
+        </ion-card-content>
+      </ion-card>
+    </p>
+    <p style="text-align: center;">
+      <ion-card>
+        <ion-card-title align="center">Temperatura</ion-card-title>
+        <ion-card-content style="text-align: center; font-size: 5rem">
+          <div class="card-row">
+            {{dweet.with[0].content.$temperatura}} C
+          </div>
+          <div class="card-row min-max-row">
+            <div class="min-cell">
+              <ion-icon name="arrow-down" class="min-icon"></ion-icon>
+              {{dweet.with[0].content.$minTemp}} C
+            </div>
+            <div class="max-cell">
+              <ion-icon name="arrow-up" class="max-icon"></ion-icon>
+              {{dweet.with[0].content.$maxTemp}} C
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </p>
+    <p style="text-align: center;">
+      <ion-card>
+        <ion-card-title align="center">Luminosidade</ion-card-title>
+        <ion-card-content style="text-align: center; font-size: 5rem">
+          <div class="card-row">
+            {{dweet.with[0].content.$luminosidade}} Lux
+          </div>
+          <div class="card-row min-max-row">
+            <div class="min-cell">
+              <ion-icon name="arrow-down" class="min-icon"></ion-icon>
+              {{dweet.with[0].content.$minLum}} Lux
+            </div>
+            <div class="max-cell">
+              <ion-icon name="arrow-up" class="max-icon"></ion-icon>
+              {{dweet.with[0].content.$maxLum}} Lux
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </p>
+
+    <p style="text-align: center;">
+      <ion-card>
+        <ion-card-title align="center">Umidade</ion-card-title>
+        <ion-card-content style="text-align: center; font-size: 5rem">
+          <div class="card-row">
+            {{dweet.with[0].content.$umidade}} %
+          </div>
+          <div class="card-row min-max-row">
+            <div class="min-cell">
+              <ion-icon name="arrow-down" class="min-icon"></ion-icon>
+              {{dweet.with[0].content.$minUmid}} %
+            </div>
+            <div class="max-cell">
+              <ion-icon name="arrow-up" class="max-icon"></ion-icon>
+              {{dweet.with[0].content.$maxUmid}} %
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </p>
+
+  </div>
+  
+
+</ion-content>

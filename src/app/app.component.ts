@@ -31,6 +31,11 @@ export class AppComponent implements OnInit {
       title: 'Umidade',
       url: '/humidity',
       icon: 'water'
+    },
+    {
+      title: 'Dashboard',
+      url: '/dashboard',
+      icon: 'analytics'
     }
   ];
   
